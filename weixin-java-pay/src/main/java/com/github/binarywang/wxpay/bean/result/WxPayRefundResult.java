@@ -107,6 +107,7 @@ public class WxPayRefundResult extends BaseWxPayResult implements Serializable {
    * 组装生成退款代金券信息.
    */
   public void composeRefundCoupons() {
+    this.setCouponRefundCount(null == this.getCouponRefundCount() ? 0 : this.getCouponRefundCount());
     List<WxPayRefundCouponInfo> coupons = Lists.newArrayList();
     for (int i = 0; i < this.getCouponRefundCount(); i++) {
       coupons.add(
